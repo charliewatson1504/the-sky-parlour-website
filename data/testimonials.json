@@ -1,0 +1,28 @@
+{
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "date": "2024-03-15",
+      "text": "Maxine transformed my hair completely! The attention to detail and care was outstanding.",
+      "rating": 5
+    },
+    {
+      "name": "Emma Williams",
+      "date": "2024-03-10",
+      "text": "Best salon experience I've ever had. The color is exactly what I wanted!",
+      "rating": 5
+    },
+    {
+      "name": "Lucy Brown",
+      "date": "2024-03-05",
+      "text": "Such a welcoming atmosphere and incredible results. Will definitely be back!",
+      "rating": 5
+    },
+    {
+      "name": "Kate Smith",
+      "date": "2024-03-01",
+      "text": "Amazing service from start to finish. Love my new style!",
+      "rating": 5
+    }
+  ]
+}

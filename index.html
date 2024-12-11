@@ -1,0 +1,143 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Sky Parlour - Hair Salon</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="js/dataHandler.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <a href="/">The Sky Parlour</a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/team" class="nav-link">Meet The Team</a></li>
+          <li><a href="/gallery" class="nav-link">Gallery</a></li>
+          <li><a href="/contact" class="nav-link">Contact Us</a></li>
+        </ul>
+        <button
+          class="btn book-now-btn"
+          hx-get="/data/booking-form.json"
+          hx-target="#booking-modal"
+          hx-trigger="click"
+        >
+          Book Now
+        </button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Amazing hair experience from beginning to end</h1>
+        <button
+          class="btn btn-primary cta-button"
+          hx-get="/data/booking-form.json"
+          hx-target="#booking-modal"
+          hx-trigger="click"
+        >
+          Book Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="featured-services">
+      <div class="container">
+        <h2 class="section-title">Our Featured Services</h2>
+        <div
+          class="services-grid"
+          hx-get="/data/services.json"
+          hx-trigger="load"
+          hx-swap="innerHTML"
+        >
+          <div class="loading-placeholder">Loading services...</div>
+        </div>
+        <a href="/services" class="btn btn-secondary">View All Services</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="container">
+        <h2 class="section-title">About Maxine</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="/api/placeholder/400/400" alt="Maxine" />
+          </div>
+          <div class="about-text">
+            <p>
+              Meet Maxine, salon owner and hairstylist with almost 18 years in the industry. Maxine
+              loves all things rainbow and is highly qualified in colouring services and has a
+              passion for short cuts and long, beautiful waves!
+            </p>
+            <p>
+              "People always ask me what my favourite thing about my job is and to be honest, it's
+              the before and after! No matter if I've done a blow-dry or a massive colour
+              transformation, what gets me every-time is the before and after! Maximising my amazing
+              client's beautiful hair is what I live for!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">Voices of Our Clients</h2>
+        <div class="testimonials-slider">
+          <div class="loading-placeholder">Loading testimonials...</div>
+        </div>
+        <div class="testimonial-nav">
+          <button class="btn btn-secondary prev-btn" disabled>Previous</button>
+          <button class="btn btn-secondary next-btn">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+      <!-- Booking form will be loaded here -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3>The Sky Parlour</h3>
+            <p>123 Hair Street</p>
+            <p>Hairtown, HT1 2AB</p>
+            <p>01234 567890</p>
+            <p>hello@skyparlour.com</p>
+          </div>
+          <div class="footer-hours">
+            <h3>Opening Hours</h3>
+            <div hx-get="/data/hours.json" hx-trigger="load" hx-swap="innerHTML">
+              <div class="loading-placeholder">Loading hours...</div>
+            </div>
+          </div>
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">TikTok</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

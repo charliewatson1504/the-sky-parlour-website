@@ -1,0 +1,28 @@
+{
+  "featured": [
+    {
+      "title": "Hair Coloring",
+      "subTitle": "Full Color Service",
+      "price": "From £100",
+      "description": "Professional hair coloring services including balayage, highlights, and full color treatments"
+    },
+    {
+      "title": "Styling",
+      "subTitle": "Custom Styling",
+      "price": "From £45",
+      "description": "Expert styling for any occasion, from everyday looks to special events"
+    },
+    {
+      "title": "Cuts",
+      "subTitle": "Precision Cutting",
+      "price": "From £55",
+      "description": "Precision haircuts tailored to your face shape and style preferences"
+    },
+    {
+      "title": "Treatments",
+      "subTitle": "Hair Health",
+      "price": "From £35",
+      "description": "Nourishing treatments to restore and maintain healthy hair"
+    }
+  ]
+}

@@ -57,7 +57,7 @@
         <h2 class="section-title">Our Featured Services</h2>
         <div
           class="services-grid"
-          hx-get="/data/services.json"
+          hx-get="/the-sky-parlour-website/data/services.json"
           hx-trigger="load"
           hx-swap="innerHTML"
         >
@@ -124,7 +124,11 @@
           </div>
           <div class="footer-hours">
             <h3>Opening Hours</h3>
-            <div hx-get="/data/hours.json" hx-trigger="load" hx-swap="innerHTML">
+            <div
+              hx-get="/the-sky-parlour-website/data/hours.json"
+              hx-trigger="load"
+              hx-swap="innerHTML"
+            >
               <div class="loading-placeholder">Loading hours...</div>
             </div>
           </div>

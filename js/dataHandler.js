@@ -1,3 +1,5 @@
+import config from './config.js';
+
 export class DataHandler {
   constructor() {
     this.testimonialPage = 0;
@@ -6,7 +8,7 @@ export class DataHandler {
 
   async loadServices() {
     try {
-      const response = await fetch('/data/services.json');
+      const response = await fetch(`${this.baseUrl}/data/services.json`);
       const data = await response.json();
       return data.featured;
     } catch (error) {
@@ -18,7 +20,7 @@ export class DataHandler {
 
   async loadTestimonials(page = 0) {
     try {
-      const response = await fetch('/data/testimonials.json');
+      const response = await fetch(`${this.baseUrl}/data/testimonials.json`);
       const data = await response.json();
       const start = page * this.testimonialLimit;
       return {
@@ -34,7 +36,7 @@ export class DataHandler {
 
   async loadHours() {
     try {
-      const response = await fetch('/data/hours.json');
+      const response = await fetch(`${this.baseUrl}/data/hours.json`);
       const data = await response.json();
       return data.hours;
     } catch (error) {

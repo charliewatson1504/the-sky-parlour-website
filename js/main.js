@@ -1,12 +1,15 @@
+import config from './config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   // Keep track of current page
   let currentPage = 0;
   const ITEMS_PER_PAGE = 1;
+  const baseUrl = config.baseUrl;
 
   // Function to render testimonials
   const renderTestimonialPage = async () => {
     try {
-      const response = await fetch('/data/testimonials.json');
+      const response = await fetch(`${baseUrl}/data/testimonials.json`);
       const data = await response.json();
       const testimonials = data.testimonials;
 
@@ -70,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <p class="price">${service.price || ''}</p>
       <p class="description">${service.description || ''}</p>
       <button class="btn btn-primary"
-              hx-get="/data/booking-form.json"
+              hx-get="${baseUrl}/data/booking-form.json"
               hx-target="#booking-modal"
               hx-trigger="click">
         Book Now

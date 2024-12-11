@@ -4,6 +4,7 @@ export class DataHandler {
   constructor() {
     this.testimonialPage = 0;
     this.testimonialLimit = 3;
+    this.baseUrl = config.baseUrl;
   }
 
   async loadServices() {
